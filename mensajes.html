@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mensajes - Yumiwoo</title><link rel="stylesheet" href="css/style.css"></head><body>
+<div id="sidebar" class="sidebar"><h4>Menú rápido</h4><nav><ul><li><a class="side-link" href="index.html">🏠 Inicio</a></li><li><a class="side-link" href="tienda.html">🛍️ Tienda</a></li><li><a class="side-link" href="explorar.html">🧭 Explorar</a></li></ul></nav></div>
+<div id="sidebarTab" class="sidebar-tab"></div>
+<header class="header"><div class="left"><img src="logo yumiwoo.png" class="logo-img"></div><div class="search-wrap"><form class="search" action="buscar.html" method="get"><input name="q" placeholder="Buscar..."><button>Buscar</button></form></div><div class="right"><button class="icon-btn" onclick="location.href='perfil.html'">Perfil</button></div></header>
+<main style="padding:110px 8% 80px 8%">
+  <h2 style="color:var(--blue)">Mensajes</h2>
+  <p style="margin-top:12px">Formulario de contacto:</p>
+  <form onsubmit="event.preventDefault(); document.getElementById('toast').textContent='Mensaje enviado 💌'; document.getElementById('toast').classList.add('show'); setTimeout(()=>document.getElementById('toast').classList.remove('show'),2200); this.reset();">
+    <div style="display:flex;gap:12px;flex-direction:column;max-width:520px">
+      <input required name="name" placeholder="Tu nombre" style="padding:10px;border-radius:8px;border:1px solid #ddd">
+      <input required name="email" placeholder="Tu correo" style="padding:10px;border-radius:8px;border:1px solid #ddd">
+      <textarea required name="msg" placeholder="Tu mensaje..." rows="6" style="padding:10px;border-radius:8px;border:1px solid #ddd"></textarea>
+      <button class="btn-buy" type="submit">Enviar</button>
+    </div>
+  </form>
+</main>
+<div id="toast" class="toast"></div>
+<footer class="site-footer">© 2025 Yumiwoo Handmade — All rights reserved.</footer>
+<script src="js/script.js"></script>
+</body></html>

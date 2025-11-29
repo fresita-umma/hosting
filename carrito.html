@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Carrito - Yumiwoo</title><link rel="stylesheet" href="css/style.css"><link rel="icon" href="img/logo.jpg"></head>
+<body>
+<div id="sidebar" class="sidebar" aria-hidden="true"><h4>Menú rápido</h4><nav><ul>
+<li><a class="side-link" href="index.html">🏠 Inicio</a></li>
+<li><a class="side-link" href="tienda.html">🛍️ Tienda</a></li>
+<li><a class="side-link" href="explorar.html">🧭 Explorar</a></li>
+<li class="group-space"><a class="side-link" href="favoritos.html">❤️ Me gusta</a></li>
+<li><a class="side-link" href="mensajes.html">💬 Mensajes</a></li>
+<li class="group-space"><a class="side-link" href="perfil.html">👤 Perfil</a></li>
+<li><a class="side-link" href="configuracion.html">⚙️ Configuración</a></li>
+</ul></nav></div>
+<div id="sidebarTab" class="sidebar-tab" aria-expanded="false"></div>
+<header class="header"><div class="left"><img src="logo yumiwoo.png" class="logo-img"></div><div class="search-wrap"><form class="search" action="buscar.html" method="get"><input name="q" placeholder="Buscar..."><button>Buscar</button></form></div><div class="right"><button class="icon-btn" onclick="location.href='perfil.html'">Perfil</button></div></header>
+
+<main style="padding:110px 8% 80px 8%">
+  <h2 style="color:var(--blue)">Tu carrito</h2>
+  <div id="cartArea" style="margin-top:18px;">
+    <p>Cargando items...</p>
+  </div>
+  <div style="margin-top:18px">
+    <button id="checkoutBtn" class="btn-buy">Comprar ahora</button>
+  </div>
+</main>
+
+<div id="toast" class="toast"></div>
+<footer class="site-footer">© 2025 Yumiwoo Handmade — All rights reserved.</footer>
+<script src="js/script.js"></script>
+<script>
+  // Render cart items from localStorage
+  function getCart(){ return JSON.parse(localStorage.getItem('yumi_cart') || '[]'); }
+  function renderCart(){
+    const area = document.getElementById('cartArea');
+    const cart = getCart();
+    if(!cart.length){ area.innerHTML = '<p>Tu carrito está vacío.</p>'; return; }
+    let html = '<div style="display:flex;flex-direction:column;gap:12px">';
+    let total = 0;
+    cart.forEach(item=>{
+      total += item.price * (item.qty||1);
+      html += `<div style="display:flex;justify-content:space-between;align-items:center;padding:12px;border-radius:10px;background:#fff;padding:12px;box-shadow:0 6px 18px rgba(0,0,0,0.04)"><div><strong>${item.name}</strong><div style="font-size:13px;color:#666">Cantidad: ${item.qty||1}</div></div><div style="text-align:right"><div class="kv">$${item.price * (item.qty||1)} MXN</div><div style="margin-top:8px"><button class="icon-btn" onclick="removeItem('${item.id}')">Eliminar</button></div></div></div>`;
+    });
+    html += `</div><div style="margin-top:18px"><strong>Total: $${total} MXN</strong></div>`;
+    area.innerHTML = html;
+  }
+  function removeItem(id){
+    const cart = getCart().filter(i=> i.id !== id);
+    localStorage.setItem('yumi_cart', JSON.stringify(cart));
+    renderCart();
+  }
+  document.getElementById('checkoutBtn').addEventListener('click', ()=>{
+    // simple simulated checkout
+    localStorage.removeItem('yumi_cart');
+    renderCart();
+    const t = document.getElementById('toast');
+    t.textContent = 'Compra completada 🎉 Gracias por tu compra';
+    t.classList.add('show');
+    setTimeout(()=> t.classList.remove('show'), 2600);
+  });
+  renderCart();
+</script>
+</body>
+</html>

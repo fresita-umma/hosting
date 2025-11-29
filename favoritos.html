@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Favoritos - Yumiwoo</title><link rel="stylesheet" href="css/style.css"></head><body>
+<div id="sidebar" class="sidebar"><h4>Menú rápido</h4><nav><ul><li><a class="side-link" href="index.html">🏠 Inicio</a></li><li><a class="side-link" href="tienda.html">🛍️ Tienda</a></li><li><a class="side-link" href="explorar.html">🧭 Explorar</a></li><li class="group-space"><a class="side-link" href="favoritos.html">❤️ Me gusta</a></li><li><a class="side-link" href="mensajes.html">💬 Mensajes</a></li><li class="group-space"><a class="side-link" href="perfil.html">👤 Perfil</a></li><li><a class="side-link" href="configuracion.html">⚙️ Configuración</a></li></ul></nav></div>
+<div id="sidebarTab" class="sidebar-tab"></div>
+<header class="header"><div class="left"><img src="logo yumiwoo.png" class="logo-img"></div><div class="search-wrap"><form class="search" action="buscar.html" method="get"><input name="q" placeholder="Buscar..."><button>Buscar</button></form></div><div class="right"><button class="icon-btn" onclick="location.href='perfil.html'">Perfil</button></div></header>
+<main style="padding:110px 8% 80px 8%">
+  <h2 style="color:var(--blue)">Favoritos</h2>
+  <div id="favArea" style="margin-top:18px">Cargando...</div>
+</main>
+<div id="toast" class="toast"></div>
+<footer class="site-footer">© 2025 Yumiwoo Handmade — All rights reserved.</footer>
+<script src="js/script.js"></script>
+<script>
+function renderFavs(){
+  const favs = JSON.parse(localStorage.getItem('yumi_favs')||'[]');
+  const area = document.getElementById('favArea');
+  if(!favs.length){ area.innerHTML='<p>No hay favoritos aún.</p>'; return; }
+  let html = '<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">';
+  favs.forEach(id=>{
+    html += `<div class="card"><img src="img/products/product1.jpg"><div style="margin-top:8px"><strong>Producto ${id}</strong></div></div>`;
+  });
+  html += '</div>';
+  area.innerHTML = html;
+}
+renderFavs();
+</script>
+</body></html>
