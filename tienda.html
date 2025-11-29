@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tienda - Yumiwoo</title><link rel="stylesheet" href="css/style.css"><link rel="icon" href="img/logo.jpg"></head>
+<body>
+<div id="sidebar" class="sidebar" aria-hidden="true">
+  <h4>Menú rápido</h4>
+  <nav><ul>
+    <li><a class="side-link" href="index.html">🏠 Inicio</a></li>
+    <li><a class="side-link" href="tienda.html">🛍️ Tienda</a></li>
+    <li><a class="side-link" href="explorar.html">🧭 Explorar</a></li>
+    <li class="group-space"><a class="side-link" href="favoritos.html">❤️ Me gusta</a></li>
+    <li><a class="side-link" href="mensajes.html">💬 Mensajes</a></li>
+    <li class="group-space"><a class="side-link" href="perfil.html">👤 Perfil</a></li>
+    <li><a class="side-link" href="configuracion.html">⚙️ Configuración</a></li>
+  </ul></nav>
+</div>
+<div id="sidebarTab" class="sidebar-tab" aria-expanded="false"></div>
+
+<header class="header">
+  <div class="left"><img src="logo yumiwoo.png" alt="Yumiwoo" class="logo-img"></div>
+  <div class="search-wrap"><form id="searchForm" class="search" action="buscar.html" method="get"><input type="search" name="q" placeholder="Buscar..."><button>Buscar</button></form></div>
+  <div class="right"><button class="icon-btn" onclick="location.href='carrito.html'">Carrito <span id="cartCount" style="background:var(--accent);padding:2px 6px;border-radius:999px;margin-left:6px;color:var(--cream);font-weight:700">0</span></button><button class="icon-btn" onclick="location.href='perfil.html'">Perfil</button></div>
+</header>
+
+<main style="padding:110px 8% 80px 8%">
+  <h2 style="color:var(--blue);margin-bottom:18px">Tienda - Productos</h2>
+  <section class="grid">
+
+    <article class="card">
+      <img src="sad tiger.jpg" alt="Sad Tiger - Amigurumi">
+      <div class="meta">
+        <div><strong>Sad Tiger - Amigurumi</strong><div style="font-size:13px;color:#666">Crochet</div></div>
+        <div style="text-align:right">
+          <div class="kv">$650 MXN</div>
+          <div style="margin-top:8px">
+            <button class="btn-buy" data-add-cart data-id="p1" data-name="Sad Tiger - Amigurumi" data-price="650">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" data-fav data-id="p1">❤</button>
+        <a href="tienda.html" style="color:var(--blue);text-decoration:none;font-weight:600">Ver</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <img src="playera.jpg" alt="Playera Yumiwoo - Vintage">
+      <div class="meta">
+        <div><strong>Playera Yumiwoo - Vintage</strong><div style="font-size:13px;color:#666">Playeras</div></div>
+        <div style="text-align:right">
+          <div class="kv">$450 MXN</div>
+          <div style="margin-top:8px">
+            <button class="btn-buy" data-add-cart data-id="p2" data-name="Playera Yumiwoo - Vintage" data-price="450">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" data-fav data-id="p2">❤</button>
+        <a href="tienda.html" style="color:var(--blue);text-decoration:none;font-weight:600">Ver</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <img src="stickers.jpg" alt="Pack Stickers (20 pcs)">
+      <div class="meta">
+        <div><strong>Pack Stickers (20 pcs)</strong><div style="font-size:13px;color:#666">Stickers</div></div>
+        <div style="text-align:right">
+          <div class="kv">$120 MXN</div>
+          <div style="margin-top:8px">
+            <button class="btn-buy" data-add-cart data-id="p3" data-name="Pack Stickers (20 pcs)" data-price="120">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" data-fav data-id="p3">❤</button>
+        <a href="tienda.html" style="color:var(--blue);text-decoration:none;font-weight:600">Ver</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <img src="pin.jpg" alt="Pin Metal - Corazón">
+      <div class="meta">
+        <div><strong>Pin Metal - Corazón</strong><div style="font-size:13px;color:#666">Pines</div></div>
+        <div style="text-align:right">
+          <div class="kv">$90 MXN</div>
+          <div style="margin-top:8px">
+            <button class="btn-buy" data-add-cart data-id="p4" data-name="Pin Metal - Corazón" data-price="90">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" data-fav data-id="p4">❤</button>
+        <a href="tienda.html" style="color:var(--blue);text-decoration:none;font-weight:600">Ver</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <img src="chenille.jpg" alt="Hilo Chenille 100g">
+      <div class="meta">
+        <div><strong>Hilo Chenille 100g</strong><div style="font-size:13px;color:#666">Materiales</div></div>
+        <div style="text-align:right">
+          <div class="kv">$80 MXN</div>
+          <div style="margin-top:8px">
+            <button class="btn-buy" data-add-cart data-id="p5" data-name="Hilo Chenille 100g" data-price="80">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" data-fav data-id="p5">❤</button>
+        <a href="tienda.html" style="color:var(--blue);text-decoration:none;font-weight:600">Ver</a>
+      </div>
+    </article>
+    
+    <article class="card">
+      <img src="acuarelas.jpg" alt="Set Acuarelas 12">
+      <div class="meta">
+        <div><strong>Set Acuarelas 12</strong><div style="font-size:13px;color:#666">Materiales</div></div>
+        <div style="text-align:right">
+          <div class="kv">$320 MXN</div>
+          <div style="margin-top:8px">
+            <button class="btn-buy" data-add-cart data-id="p6" data-name="Set Acuarelas 12" data-price="320">Agregar</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:10px;display:flex;gap:8px;align-items:center">
+        <button class="icon-btn" data-fav data-id="p6">❤</button>
+        <a href="tienda.html" style="color:var(--blue);text-decoration:none;font-weight:600">Ver</a>
+      </div>
+    </article>
+    
+  </section>
+</main>
+
+<div id="toast" class="toast"></div>
+<footer class="site-footer">© 2025 Yumiwoo Handmade — All rights reserved.</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
