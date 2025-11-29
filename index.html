@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Yumiwoo - Inicio</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="logo yumiwoo.png">
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<div id="sidebar" class="sidebar" aria-hidden="true">
+  <h4>Menú rápido</h4>
+  <nav>
+    <ul>
+      <li><a class="side-link" href="index.html">🏠 Inicio</a></li>
+      <li><a class="side-link" href="tienda.html">🛍️ Tienda</a></li>
+      <li><a class="side-link" href="explorar.html">🧭 Explorar</a></li>
+
+      <li class="group-space"><a class="side-link" href="favoritos.html">❤️ Me gusta</a></li>
+      <li><a class="side-link" href="mensajes.html">💬 Mensajes</a></li>
+
+      <li class="group-space"><a class="side-link" href="perfil.html">👤 Perfil</a></li>
+      <li><a class="side-link" href="configuracion.html">⚙️ Configuración</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!-- sidebar tab -->
+<div id="sidebarTab" class="sidebar-tab" aria-expanded="false"></div>
+
+<!-- HEADER -->
+<header class="header" role="banner">
+  <div class="left">
+    <img src="logo yumiwoo.png" alt="Yumiwoo logo" class="logo-img" onclick="location.href='index.html'">
+  </div>
+
+  <div class="search-wrap">
+    <form id="searchForm" class="search" action="buscar.html" method="get" role="search">
+      <input type="search" name="q" placeholder="Buscar patrones, productos, cursos..." aria-label="Buscar">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
+
+  <div class="right">
+    <button class="icon-btn" onclick="location.href='tienda.html'">Tienda</button>
+    <button class="icon-btn" onclick="location.href='carrito.html'">Carrito <span id="cartCount" style="background:var(--accent);padding:2px 6px;border-radius:999px;margin-left:6px;color:var(--cream);font-weight:700">0</span></button>
+    <button class="icon-btn" onclick="location.href='perfil.html'">Perfil</button>
+  </div>
+</header>
+
+<main class="container">
+  <article class="product-wrap" role="main" aria-labelledby="productTitle">
+    <div class="product-media">
+      <img class="main-image" src="descarga (51).jpeg" alt="Sad Tiger - producto Yumiwoo">
+    </div>
+
+    <div class="product-info">
+      <h1 id="productTitle">Jujutsu Kaisen chibi - Edición Crochet</h1>
+      <p class="desc">
+        Muñeco tejido a crochet con hilo de calidad, detalles bordados y relleno hipoalergénico. 
+        Producto hecho a mano con amor por Yumiwoo. Ideal como regalo o para decorar tu espacio creativo.
+      </p>
+
+      <div class="thumbs" aria-hidden="false">
+        <div class="thumb"><img src="Itadori Crochet Minidoll.jpeg" alt="vista 1"></div>
+        <div class="thumb"><img src="chart móc len gojo.jpeg" alt="vista 2"></div>
+        <div class="thumb"><img src="Jujutsu Kaisen Keychain _ Crochet Keychain Handmade.jpeg" alt="vista 3"></div>
+      </div>
+
+      <div class="buy-row">
+        <div class="price">$650 MXN</div>
+        <button class="btn-buy" data-add-cart data-id="sad-tiger" data-name="Sad Tiger" data-price="650">Agregar al carrito</button>
+      </div>
+
+      <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@https://www.tiktok.com/@beary_aesthetic_/video/7364062240934350111" data-video-id="7364062240934350111" style="max-width: 325px; min-width: 225px;">
+  <section> </section>
+</blockquote>
+<script async src="https://www.tiktok.com/embed.js"></script>
+
+      <div style="margin-top:14px;color:#666;font-size:13px">
+        <strong>Detalles:</strong> 100% algodón, lavado a mano. Envío disponible en México.
+      </div>
+    </div>
+  </article>
+</main>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<footer class="site-footer">
+  © 2025 Yumiwoo Handmade — All rights reserved.
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
